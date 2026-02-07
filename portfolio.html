@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shweta J Gawade | HR & Digital Marketing Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --accent: #e94560;
+            --secondary: #16213e;
+            --light: #f8f9fa;
+            --gold: #d4af37;
+            --teal: #0f4c75;
+            --peach: #ff6b9d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--primary);
+            background: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.03;
+        }
+        
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 5% 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text {
+            animation: fadeInLeft 1s ease-out;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .hero-text .highlight {
+            background: linear-gradient(135deg, var(--accent), var(--peach));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.4rem;
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--peach));
+            color: white;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 1s ease-out;
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+            transform: rotate(2deg);
+            transition: transform 0.3s;
+        }
+        
+        .profile-card:hover {
+            transform: rotate(0deg) translateY(-10px);
+        }
+        
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent), var(--peach));
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            margin: 0 auto 1.5rem;
+            display: block;
+            background: linear-gradient(135deg, var(--accent), var(--peach));
+            padding: 3px;
+        }
+        
+        .profile-image-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        .contact-item svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent);
+        }
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(255, 107, 157, 0.1));
+            color: var(--accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        /* Sections */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--accent), var(--peach));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(135deg, var(--accent), var(--peach));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+        
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), var(--peach));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .skill-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .skill-list {
+            list-style: none;
+            color: #666;
+        }
+        
+        .skill-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .skill-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent), var(--peach));
+        }
+        
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--light);
+        }
+        
+        .experience-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-meta {
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-duration {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-item ul {
+            list-style: none;
+            color: #666;
+        }
+        
+        .experience-item ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .experience-item ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .education-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--accent);
+            transition: all 0.3s;
+        }
+        
+        .education-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+        }
+        
+        .education-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-card .degree {
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-card .duration {
+            color: #888;
+            font-size: 0.95rem;
+        }
+        
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .cert-badge {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .cert-badge:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .cert-badge::before {
+            content: '🏆';
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cert-badge p {
+            color: #555;
+            font-weight: 500;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            margin: 4rem 5%;
+        }
+        
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+            font-size: 0.95rem;
+        }
+        
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+        .stagger-2 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+        .stagger-3 { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+        .stagger-4 { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">SJG</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>
+                    Hi, I'm<br>
+                    <span class="highlight">Shweta J Gawade</span>
+                </h1>
+                <p class="subtitle">HR Specialist • Digital Marketer • Tech Enthusiast</p>
+                <p>MBA graduate with a unique blend of Human Resource Management, Digital Marketing expertise, and technical acumen. I transform recruitment processes, build engaging brand narratives, and leverage AI tools to drive organizational excellence.</p>
+                <div class="cta-buttons">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gawadeshweta6@gmail.com" target="_blank" class="btn btn-primary">Let's Connect</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <img src="photo.jpg" alt="Shweta J Gawade" class="profile-image-inner">
+                    </div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem; text-align: center;">Shweta J Gawade</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <span>Belgaum, Karnataka</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f282e382e2b2a3c27382a3b2e790f28222e2623612c2022">[email&#160;protected]</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            <span>+91 9148138362</span>
+                        </div>
+                    </div>
+                    <div class="skills-tags">
+                        <span class="tag">HR Management</span>
+                        <span class="tag">Digital Marketing</span>
+                        <span class="tag">AI Tools</span>
+                        <span class="tag">Recruitment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2 class="section-title">Core Competencies</h2>
+        <p class="section-subtitle">A versatile skill set at the intersection of people, technology, and creativity</p>
+        
+        <div class="skills-grid">
+            <div class="skill-card fade-in stagger-1">
+                <div class="skill-icon">👥</div>
+                <h3>HR & Talent Acquisition</h3>
+                <ul class="skill-list">
+                    <li>End-to-End Recruitment (IT & Non-IT)</li>
+                    <li>Candidate Sourcing & Screening</li>
+                    <li>Interview Coordination</li>
+                    <li>ATS & HR Systems</li>
+                    <li>Onboarding & Compliance</li>
+                    <li>Stakeholder Management</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card fade-in stagger-2">
+                <div class="skill-icon">📱</div>
+                <h3>Digital Marketing</h3>
+                <ul class="skill-list">
+                    <li>Social Media Management</li>
+                    <li>Content Writing & Strategy</li>
+                    <li>Email Marketing</li>
+                    <li>Brand Engagement</li>
+                    <li>SEO & Google Ads</li>
+                    <li>Campaign Support</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card fade-in stagger-3">
+                <div class="skill-icon">🛠️</div>
+                <h3>Tools & Technology</h3>
+                <ul class="skill-list">
+                    <li>MS Excel & Google Sheets</li>
+                    <li>Canva & WordPress</li>
+                    <li>Power BI Dashboards</li>
+                    <li>Job Portals (Naukri, LinkedIn, Indeed)</li>
+                    <li>AI Tools (ChatGPT, Claude, Gemini)</li>
+                    <li>MS Office Suite</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card fade-in stagger-4">
+                <div class="skill-icon">⭐</div>
+                <h3>Professional Strengths</h3>
+                <ul class="skill-list">
+                    <li>Communication & Collaboration</li>
+                    <li>Creative Storytelling</li>
+                    <li>Attention to Detail</li>
+                    <li>Time Management</li>
+                    <li>Research & Data Analysis</li>
+                    <li>Quick Learning & Adaptability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <h2 class="section-title">Professional Journey</h2>
+        <p class="section-subtitle">Building expertise across HR, technology, and operations</p>
+        
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <h3>Senior System Associate</h3>
+                <div class="experience-meta">Infosys Limited, Pune, India</div>
+                <div class="experience-duration">December 2021 – October 2024</div>
+                <ul>
+                    <li>Supported IT recruitment by sourcing and screening resumes based on technical and functional requirements</li>
+                    <li>Coordinated technical and HR interviews with hiring managers and panels</li>
+                    <li>Maintained ATS records, recruitment trackers, and candidate status reports</li>
+                    <li>Assisted with offer coordination, document collection, onboarding, and compliance activities</li>
+                    <li>Ensured consistent candidate communication and positive hiring experience</li>
+                    <li>Provided production and application support within IT environment</li>
+                    <li>Collaborated with cross-functional teams including developers, QA, and business analysts</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>MBA Internship – HR Operations</h3>
+                <div class="experience-meta">Rainbow Forms, Belgaum</div>
+                <div class="experience-duration">April 2025 – May 2025</div>
+                <ul>
+                    <li>Maintained attendance data and employee records</li>
+                    <li>Supported employee communication and engagement activities</li>
+                    <li>Assisted with daily HR coordination tasks</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Organization Study</h3>
+                <div class="experience-meta">Prism Enterprise, Belgaum</div>
+                <div class="experience-duration">November 2024 – December 2024</div>
+                <ul>
+                    <li>Managed HR documentation and attendance tracking</li>
+                    <li>Supported compliance activities and record maintenance</li>
+                    <li>Enhanced understanding of organizational HR processes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">Academic foundation combining business management and technology</p>
+        
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>Master of Business Administration</h3>
+                <div class="degree">HR Management & Marketing</div>
+                <p style="color: #555; margin: 0.5rem 0;">Jain College of Engineering, Belgaum, Karnataka</p>
+                <div class="duration">December 2023 – December 2025</div>
+            </div>
+            
+            <div class="education-card">
+                <h3>Bachelor of Computer Applications</h3>
+                <div class="degree">BCA</div>
+                <p style="color: #555; margin: 0.5rem 0;">DMS Mandal's College of Computer Application, Belgaum</p>
+                <div class="duration">October 2018 – September 2021</div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-subtitle">Continuous learning in AI, HR technology, and marketing</p>
+        
+        <div class="cert-grid">
+            <div class="cert-badge">
+                <p>NPTEL: AI in Human Resource Management (2024)</p>
+            </div>
+            <div class="cert-badge">
+                <p>Generative AI in Recruiting & Talent Acquisition (2024)</p>
+            </div>
+            <div class="cert-badge">
+                <p>Generative AI Mastermind – Outskill (2024)</p>
+            </div>
+            <div class="cert-badge">
+                <p>Marketing Quiz Participation Certificate</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="contact-section" id="contact">
+        <h2>Let's Work Together</h2>
+        <p>I'm passionate about creating people-first strategies and data-driven solutions. Whether it's recruitment, digital marketing, or HR operations—let's connect!</p>
+        <div class="contact-links">
+            <a href="/cdn-cgi/l/email-protection#f89f998f999c9d8b908f9d8c99ceb89f95999194d69b9795">📧 Email Me</a>
+            <a href="https://www.linkedin.com/in/shweta-gawade-9b71812ab/" target="_blank">💼 LinkedIn</a>
+            <a href="tel:+919148138362">📱 Call Me</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Shweta J Gawade. Designed with passion and precision.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">English • Hindi • Marathi</p>
+    </footer>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => 
